@@ -6,10 +6,10 @@ require_relative '../src/rental'
 describe 'Customer' do
 
   let(:customer) { Customer.new('Bartosz') }
-  let(:regular_movie) { Movie.new('Regular movie', Movie::REGULAR) }
-  let(:new_release_movie) { Movie.new('New release movie', Movie::NEW_RELEASE) }
-  let(:childrens_movie) { Movie.new('Childrens movie', Movie::CHILDRENS) }
-  let(:rental) { Movie.new('Childrens movie', Movie::CHILDRENS) }
+  let(:regular_movie) { Movie.new('Regular movie', RegularPrice.new) }
+  let(:new_release_movie) { Movie.new('New release movie', NewReleasePrice.new) }
+  let(:childrens_movie) { Movie.new('Childrens movie', ChildrensPrice.new) }
+  let(:rental) { Movie.new('Childrens movie', ChildrensPrice.new) }
 
   describe 'Rents one movie for one day' do
     number_of_days = 1
